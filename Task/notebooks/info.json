@@ -1,0 +1,9 @@
+{
+  "category": "Robbery, Assault",
+  "location": ["Bank of America, North of Kittredge, Lower Canyon", "Tacoma 66, TNW drive", "North Hollywood Medical Center", "5026 Langisham Boulevard at New Wave Communications", "Riverside Drive", "Victory in Lower Canyon", "Hughes Family Market", "Van Olland", "Laurel Canyon", "Good Year at Kidridge and Laurel Canyon", "Archwood and Laurel Canyon"],
+  "time": "Not mentioned in the provided transcript.",
+  "suspect_or_victim": {
+    "suspects": ["2 male Hispanic suspects", "6 male blacks in the location", "Unknown number of suspects in ski masks wielding AK-47s"],
+    "victims": ["Unnamed officers and civilians", "Elderly victim"]
+  }
+}
