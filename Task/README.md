@@ -85,7 +85,7 @@ Task/
 ## Acknowledgments
 
 - OpenAI for the Whisper speech recognition model
+- GPT-4 for processing the transcript and return JSON response.
 - Streamlit for the web application framework
-- spaCy for natural language processing
 
 ---
