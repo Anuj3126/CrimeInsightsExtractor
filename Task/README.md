@@ -15,8 +15,9 @@ An AI-powered solution that processes police complaint audio calls, transcribes 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Anuj3126/CrimeInsightsExtractor.git
    cd CrimeInsightsExtractor
+   cd Task
    ```
 
 2. **Create and activate a virtual environment**
@@ -49,6 +50,12 @@ An AI-powered solution that processes police complaint audio calls, transcribes 
    - Location and time extraction
    - People and weapons mentioned
    - Additional contextual details
+     
+4. **Using Google Colab** (For monitoring each and every step):
+   - Connect to T4 GPU kernel as it would make the whole process faster.
+   - Include your OpenAI key for the code to work.
+   - Run the requirements cell first to make sure we have all the dependencies installed
+   - Upload the audio file that you want to process and run the subsequent cell to get the transcript and the info.
 
 ## IMPORTANT:
 - Jupyter notebook has the sample input and output already done as a demo with both the transcript and the extracted data.
@@ -57,7 +64,8 @@ An AI-powered solution that processes police complaint audio calls, transcribes 
 ## Project Structure
 
 ```
-police_call_analytics/
+CrimeInsightsExtractor/
+Task/
 ├── data/                   # Sample audio files
 ├── notebooks/              # Jupyter notebook used for testing and for GPU purpose (Google colab)
 ├── src/                    # Source code
