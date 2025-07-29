@@ -3,10 +3,19 @@ import tempfile
 import os
 import whisper
 from openai import OpenAI
-from pydub import AudioSegment
 import datetime
 from dotenv import load_dotenv
+# Path to ffmpeg.exe
+ffmpeg_path = r"C:\ffmpeg\bin\ffmpeg.exe"
+
+# Set environment variable for pydub
+os.environ["FFMPEG_BINARY"] = ffmpeg_path
+
+# Add ffmpeg's folder to PATH so subprocess can find it
+os.environ["PATH"] += os.pathsep + os.path.dirname(ffmpeg_path)
+from pydub import AudioSegment
 load_dotenv()
+AudioSegment.converter = ffmpeg_path
 
 # Set your OpenAI API key
 apikey = os.getenv("OPENAI_API_KEY")
@@ -74,12 +83,13 @@ You are a police assistant AI. Given the following transcript of a police compla
 2. Location of Incident
 3. Time or Date if mentioned
 4. Any names of suspects or victims mentioned
+5. Any other relevant details
 
 Transcript:
 \"\"\"{transcript}\"\"\"
 
 Return the result as a JSON object with keys:
-"category", "location", "time", "suspect_or_victim"
+"category", "location", "time", "suspect_or_victim", "other_details"
 """
     response = client.responses.create(
         model="gpt-4",
@@ -87,7 +97,7 @@ Return the result as a JSON object with keys:
         input=prompt
     )
     log("✅ Crime insights extraction complete.")
-    return response.choices[0].message['content']
+    return response.output_text
 
 # -----------------------------
 # Streamlit UI
